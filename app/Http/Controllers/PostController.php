@@ -17,9 +17,10 @@ class PostController extends Controller
 
     public function listPost(Post $id)
     {
+
+        $post = $id->load('comments.user');
+        return new PostResource($post);
         
-        $posts = Post::find($id);
-        return PostResource::collection($posts);
     }
 
     public function createPost(Request $request)

@@ -23,9 +23,7 @@ class PostResource extends JsonResource
                 'nome' => $this->user->nome,
                 'email' => $this->user->email
             ],
-            'comentarios' => [
-                
-            ],
+            'comentarios' => ComentarioResource::collection($this->whenLoaded('comments')),
             'data_post' => $this->created_at
         ];
     }

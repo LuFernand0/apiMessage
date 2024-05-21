@@ -21,7 +21,8 @@ class ComentarioResource extends JsonResource
                 'id' => $this->user->id,
                 'nome' => $this->user->nome,
                 'email' => $this->user->email
-            ]
+            ],
+            'data_comentario' => $this->created_at
         ];
     }
 }

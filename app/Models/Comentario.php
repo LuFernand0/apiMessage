@@ -17,7 +17,7 @@ class Comentario extends Model
 
     public function post()
     {
-        return $this->belongsTo(Post::class, 'id', 'post_id');
+        return $this->belongsTo(Post::class, 'post_id', 'id');
     }
 
     public function user()
