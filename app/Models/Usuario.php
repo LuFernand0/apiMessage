@@ -17,6 +17,11 @@ class Usuario extends Model
 
     public function posts()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class, 'usuario_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comentario::class, 'usuario_id', 'id');
     }
 }

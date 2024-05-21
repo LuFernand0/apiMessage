@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
@@ -40,3 +41,10 @@ Route::put('/posts/{id}', [PostController::class, 'updatePost'])->name('posts.up
 
 Route::delete('/posts/{id}', [PostController::class, 'deletePost'])->name('posts.deletePost');
 
+// Rotas de Comentários
+Route::get('/comentarios', [ComentarioController::class, 'listAllComments'])->name('comments.listAllComments');
+
+Route::post('/comentarios', [ComentarioController::class, 'createComment'])->name('comments.createComment');
+Route::put('/comentarios/{id}', [ComentarioController::class, 'updateComment'])->name('comments.updateComment');
+
+Route::delete('/comentarios/{id}', [ComentarioController::class, 'deleteComment'])->name('comments.deleteComment');
